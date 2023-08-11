@@ -63,11 +63,7 @@ const PInput: FC<InputProps> = ({
         return (
           <>
             <div className={`${styles.inputBox} ${className}`}>
-              <LabelText
-                labelText={labelText}
-                required={required}
-                htmlFor={id}
-              />
+              <LabelText labelText={labelText} required={required} />
               {startAdornment && (
                 <div className={styles.startAdornment}>{startAdornment}</div>
               )}
