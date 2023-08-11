@@ -8,7 +8,8 @@ import { FC } from "react";
 
 interface InputProps {
   control?: any;
-  name: string;
+  name?: string;
+  inputValue?: any;
   required?: boolean;
   withTrim?: boolean;
   rules?: any;
@@ -46,6 +47,7 @@ const PInput: FC<InputProps> = ({
   labelText,
   id,
   handleInputChange = () => {},
+  inputValue = "",
   ...restProps
 }) => {
   const { control: controlInput } = useForm();
@@ -68,7 +70,7 @@ const PInput: FC<InputProps> = ({
                 <div className={styles.startAdornment}>{startAdornment}</div>
               )}
               <input
-                value={value}
+                value={value || inputValue}
                 onChange={(e) => {
                   onChange(withTrim ? e.target.value?.trim() : e.target.value);
                   handleInputChange(e);

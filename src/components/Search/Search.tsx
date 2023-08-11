@@ -40,8 +40,8 @@ const Search: FC<ISearchProps> = ({
         clearFn={() => setSearch("")}
         placeholder="Search for a book"
         size="small"
-        value={search}
         isClear={search}
+        inputValue={search}
       />
     </div>
   );
