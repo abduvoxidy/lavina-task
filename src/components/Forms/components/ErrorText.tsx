@@ -3,8 +3,8 @@ import { FC } from "react";
 
 interface ErrorProps {
   error: {
-    type?: string;
-    message?: string;
+    type?: string | null;
+    message?: string | null;
   };
 }
 
