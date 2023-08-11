@@ -20,7 +20,7 @@ interface InputProps {
   endAdorment?: any;
   className?: string;
   isLoading?: boolean;
-  isClear?: boolean;
+  isClear?: any;
   clearFn?: () => void;
   labelText?: string;
   id?: string;
