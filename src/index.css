@@ -1,0 +1,41 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background-color: #ffff;
+  color: #000;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

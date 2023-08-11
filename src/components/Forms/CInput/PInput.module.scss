@@ -1,0 +1,89 @@
+.inputBox {
+  position: relative;
+  width: 100%;
+
+  .input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 24px;
+    height: 40px;
+    color: black;
+    border: 1px solid #e5e9eb;
+    border-radius: 6px;
+    transition: all 0.25s ease-in-out;
+    &.disabled {
+      background: #f5f5f5;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    &.withStartAdornment {
+      padding-left: 50px;
+    }
+    &.withEndAdornment {
+      padding-right: 50px;
+    }
+    &:focus {
+      outline: none;
+      border-color: #0e73f6 !important;
+    }
+    &:hover {
+      border-color: #0e73f6 !important;
+    }
+    &.medium {
+      height: 48px;
+      font-size: 15px;
+      line-height: 19px;
+    }
+    &.small {
+      height: 44px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &::placeholder {
+      font-size: 15px;
+      line-height: 24px;
+      color: #959fa7;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    &[type="number"] {
+      -moz-appearance: textfield; /* Firefox */
+    }
+  }
+  .error {
+    border-color: red !important;
+
+    &:focus {
+      outline: none;
+      border-color: red !important;
+    }
+  }
+
+  .startAdornment {
+    position: absolute;
+    left: 16px;
+    height: 20px;
+    top: calc(50% - 10px);
+  }
+  .loader {
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 10px);
+    svg {
+      color: #0e73f6;
+    }
+  }
+  .clear {
+    position: absolute;
+    right: 16px;
+    top: calc(50% + 3px);
+    cursor: pointer;
+  }
+}

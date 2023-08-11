@@ -1,0 +1,45 @@
+{
+  "name": "bookly",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.2",
+    "axios": "^1.4.0",
+    "blueimp-md5": "^2.19.0",
+    "crypto-js": "^4.1.1",
+    "lodash": "^4.17.21",
+    "nookies": "^2.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.4",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.11.2",
+    "sass": "^1.62.1",
+    "use-local-storage-state": "^18.3.3"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  }
+}
