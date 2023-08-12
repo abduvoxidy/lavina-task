@@ -14,7 +14,7 @@ function App() {
       <>
         <Routes>
           <Route index path="/login" element={<Login />} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          {/* <Route path="*" element={<Navigate to="/login" />} /> */}
         </Routes>
       </>
     );
