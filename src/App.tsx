@@ -4,7 +4,6 @@ import Login from "./views/Login";
 import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import Books from "./views/Books";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 function App() {
