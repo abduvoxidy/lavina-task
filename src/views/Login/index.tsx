@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { register, login } from "../../services/auth";
 import LocalStorage from "../../utils/LocalStorage";
 import CInput from "../../components/Forms/CInput";
+import { useNavigate } from "react-router-dom";
 
 import "./Login.scss";
 
@@ -20,6 +21,7 @@ interface ILoginState {
 const Login: FC = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const { handleSubmit, control, reset } = useForm();
 
@@ -38,7 +40,7 @@ const Login: FC = () => {
       maxAge: 30 * 24 * 60 * 60,
       path: "/",
     });
-    location.reload();
+    navigate(0);
   };
 
   const onSubmit = (values: any) => {
@@ -48,6 +50,7 @@ const Login: FC = () => {
         .then((res) => {
           if (res.data.isOk === true) {
             isLogged(res.data.data);
+
             reset({
               name: "",
               email: "",
@@ -64,6 +67,7 @@ const Login: FC = () => {
         .then((res) => {
           if (res.data.isOk === true) {
             isLogged(res.data.data);
+            navigate("/");
           }
           reset({
             key: "",
