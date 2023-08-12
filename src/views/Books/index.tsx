@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../../services/books";
-import GridList from "../../components/Cards";
+import Cards from "../../components/Cards";
 import { FC } from "react";
 
 import "./Books.scss";
@@ -21,16 +21,16 @@ const Books: FC = () => {
   return (
     <div className="books">
       {myBooks?.length > 0 ? (
-        <GridList
+        <Cards
           books={myBooks}
           isEditable={true}
           setMyBooks={setMyBooks}
           fetchBooks={fetchBooks}
         />
       ) : (
-        <div className="empty">
-          You don't have any books yet. Please add some books to your library.
-        </div>
+        <h3 className="list">
+          Sizda kitoblar yo'q, kutubxonaga o'tib kitob qo'shing!
+        </h3>
       )}
     </div>
   );

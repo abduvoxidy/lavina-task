@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Search from "../../components/Search/Search";
+import SearchBooks from "../../components/SearchBooks/SearchBooks";
 import Cards from "../../components/Cards";
 import { CircularProgress } from "@mui/material";
 
@@ -18,7 +18,7 @@ function Home() {
 
   return (
     <div className="home">
-      <Search
+      <SearchBooks
         search={search}
         setSearch={setSearch}
         setSearchedBooks={setSearchedBooks}

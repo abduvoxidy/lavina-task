@@ -24,8 +24,7 @@
     "react-hook-form": "^7.45.4",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.11.2",
-    "sass": "^1.62.1",
-    "use-local-storage-state": "^18.3.3"
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",

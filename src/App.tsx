@@ -1,37 +1,34 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
-import Login from "./views/Auth";
+import Login from "./views/Login";
 import Home from "./views/Home";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Books from "./views/Books";
 import LocalStorage from "./utils/LocalStorage";
-import { Toaster } from "react-hot-toast";
 
 function App() {
   const isAuth = LocalStorage.get("isAuth");
 
   if (!isAuth) {
     return (
-      <BrowserRouter>
+      <>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="*" element={<Login />} />
+          <Route index path="/login" element={<Login />} />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
-        <Toaster position="top-center" reverseOrder={false} />
-      </BrowserRouter>
+      </>
     );
   }
 
   return (
-    <BrowserRouter>
-      <Header />
+    <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/my-library" element={<Books />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Toaster position="top-center" reverseOrder={false} />
-    </BrowserRouter>
+    </>
   );
 }
 

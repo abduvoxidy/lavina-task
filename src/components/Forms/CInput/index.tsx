@@ -25,6 +25,7 @@ interface InputProps {
   clearFn?: () => void;
   labelText?: string;
   id?: string;
+  type?: any;
   handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -48,6 +49,7 @@ const PInput: FC<InputProps> = ({
   id,
   handleInputChange = () => {},
   inputValue = "",
+  type = "text",
   ...restProps
 }) => {
   const { control: controlInput } = useForm();
@@ -84,6 +86,7 @@ const PInput: FC<InputProps> = ({
           ${error ? styles.error : ""} ${disabled ? styles.disabled : ""} ${
                   styles[size]
                 }`}
+                type={type}
                 {...restProps}
               />
               {endAdorment && (

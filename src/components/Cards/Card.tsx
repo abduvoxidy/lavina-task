@@ -1,11 +1,12 @@
 import { FC } from "react";
+import toast from "react-hot-toast";
+
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Button, MenuItem, Select } from "@mui/material";
+
+// functions
 import { addBook, changeStatus, deleteBook } from "../../services/books";
-import toast from "react-hot-toast";
-import { Button } from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
 
 interface ICardProps {
   book: any;
@@ -88,9 +89,9 @@ const Card: FC<ICardProps> = ({
             </Select>
           </div>
 
-          <button className="delete" onClick={handleDelete}>
+          <Button variant="contained" className="delete" onClick={handleDelete}>
             <DeleteIcon />
-          </button>
+          </Button>
         </div>
       )}
       {!isEditable && (

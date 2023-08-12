@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import Profile from "../Profile";
 import { FC } from "react";
 
-import "./Header.scss";
+import "./Navbar.scss";
 
-const Header: FC = () => {
+const Navbar: FC = () => {
   return (
-    <div className="header">
+    <div className="navbar">
       <Link to="/">
         <h2>Kutubxona</h2>
       </Link>
@@ -15,4 +15,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default Navbar;
