@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 // components
 import PInput from "../Forms/CInput";
@@ -22,6 +22,9 @@ const SearchBooks: FC<ISearchProps> = ({
   setSearchedBooks,
 }) => {
   const userData = LocalStorage.get("userData");
+  useEffect(() => {
+    handleSearch();
+  }, []);
 
   const handleSearch = () => {
     setIsLoading && setIsLoading(true);
