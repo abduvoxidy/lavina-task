@@ -67,7 +67,6 @@ const Login: FC = () => {
         .then((res) => {
           if (res.data.isOk === true) {
             isLogged(res.data.data);
-            navigate("/");
           }
           reset({
             key: "",
