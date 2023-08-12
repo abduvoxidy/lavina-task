@@ -11,9 +11,9 @@ import {
 import Logout from "@mui/icons-material/Logout";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { Link } from "react-router-dom";
-import { destroyCookie } from "nookies";
 import { FC, MouseEvent } from "react";
 import LocalStorage from "../../utils/LocalStorage";
+import { logoutUser } from "../../utils/logoutUser";
 
 const Profile: FC = () => {
   const userData = LocalStorage.get("userData");
@@ -24,14 +24,6 @@ const Profile: FC = () => {
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const handleLogout = () => {
-    LocalStorage.remove("userData");
-    LocalStorage.set("isAuth", false);
-    destroyCookie(null, "userKey");
-    destroyCookie(null, "userSecret");
-    location.reload();
   };
 
   return (
@@ -66,7 +58,7 @@ const Profile: FC = () => {
           </MenuItem>
         </Link>
         <Divider />
-        <MenuItem onClick={handleLogout}>
+        <MenuItem onClick={logoutUser}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
