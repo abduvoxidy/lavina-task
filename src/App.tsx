@@ -4,9 +4,14 @@ import Login from "./views/Login";
 import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import Books from "./views/Books";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
-  const isAuth = JSON.parse(localStorage.getItem("isAuth"));
+  // const isAuth = JSON.parse(localStorage.getItem("isAuth"));
+  const isAuth = useSelector((state: any) => state?.auth?.isAuth);
+
+  console.log("isAuth", isAuth);
 
   if (!isAuth) {
     return (

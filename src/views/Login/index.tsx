@@ -8,6 +8,8 @@ import { register, login } from "../../services/auth";
 import LocalStorage from "../../utils/LocalStorage";
 import CInput from "../../components/Forms/CInput";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/auth/auth.slice";
 
 import "./Login.scss";
 
@@ -22,11 +24,13 @@ const Login: FC = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { handleSubmit, control, reset } = useForm();
 
   const isLogged = (data: ILoginState) => {
     LocalStorage.set("isAuth", true);
+    dispatch(authActions.login());
     LocalStorage.set("userData", data);
     setCookie(null, "userKey", data.key, {
       secure: true,
@@ -40,7 +44,7 @@ const Login: FC = () => {
       maxAge: 30 * 24 * 60 * 60,
       path: "/",
     });
-    navigate(0);
+    navigate("/");
   };
 
   const onSubmit = (values: any) => {
