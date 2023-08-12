@@ -4,17 +4,16 @@ import Login from "./views/Login";
 import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import Books from "./views/Books";
-import LocalStorage from "./utils/LocalStorage";
 
 function App() {
-  const isAuth = LocalStorage.get("isAuth");
+  const isAuth = JSON.parse(localStorage.getItem("isAuth"));
 
   if (!isAuth) {
     return (
       <>
         <Routes>
           <Route index path="/login" element={<Login />} />
-          {/* <Route path="*" element={<Navigate to="/login" />} /> */}
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </>
     );
